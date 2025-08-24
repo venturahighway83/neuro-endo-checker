@@ -6,7 +6,7 @@ import type { Config } from "tailwindcss";
 
 
 const config = {
-  darkMode: 'class',              // ← 文字列にする（または ['class', '.dark']）
+  darkMode: ['class', '.dark'],            
   content: [
     './app/**/*.{ts,tsx,js,jsx}',
     './components/**/*.{ts,tsx,js,jsx}',
