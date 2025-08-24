@@ -4,17 +4,15 @@
 
 import type { Config } from "tailwindcss";
 
-
 const config = {
-  darkMode: ['class', '.dark'],            
-  content: [
-    './app/**/*.{ts,tsx,js,jsx}',
-    './components/**/*.{ts,tsx,js,jsx}',
-    './pages/**/*.{ts,tsx,js,jsx}', // pages を使っている場合のみ
-  ],
-  theme: { extend: {} },
-  plugins: [],
+darkMode: ["class", '[data-theme="dark"]'], // 2 要素必須
+content: [
+"./app/**/*.{ts,tsx,js,jsx}",
+"./components/**/*.{ts,tsx,js,jsx}",
+"./pages/**/*.{ts,tsx,js,jsx}",
+],
+theme: { extend: {} },
+plugins: [],
 } satisfies Config;
-
 export default config;
 
