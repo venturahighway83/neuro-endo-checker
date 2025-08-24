@@ -18,19 +18,3 @@ const config = {
 
 export default config;
 
-/*
-// カスタムセレクタを使う場合の例（置き換え用）
-const config: Config = {
-darkMode: ["class", ".dark"],
-content: [
-"./app/**/*.{ts,tsx,js,jsx}",
-"./components/**/*.{ts,tsx,js,jsx}",
-"./pages/**/*.{ts,tsx,js,jsx}",
-],
-theme: { extend: {} },
-plugins: [],
-};
-export default config;
-*/
-
-
