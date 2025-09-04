@@ -505,7 +505,7 @@ export default function App() {
               <div className="sm:col-start-1 sm:row-start-1 md:col-start-1 md:row-start-1">
                 <Label className="text-white">ガイディング</Label>
                 <Select value={gcId} onValueChange={(v) => setGcId(v)}>
-                  <SelectTrigger className="w-full text-black"><SelectValue placeholder="選択" /></SelectTrigger>
+                  <SelectTrigger className="w-full text-white"><SelectValue placeholder="選択" /></SelectTrigger>
                   <SelectContent>
                     <SelectItem value="__none__">なし</SelectItem>
                     {guidingList.map(d => (<SelectItem key={d.id} value={d.id}>{d.name}</SelectItem>))}
@@ -519,7 +519,7 @@ export default function App() {
               <div className="sm:col-start-2 sm:row-start-1 md:col-start-2 md:row-start-1">
                 <Label className="text-white">中間</Label>
                 <Select value={icId} onValueChange={(v) => setIcId(v)}>
-                  <SelectTrigger className="w-full text-black"><SelectValue placeholder="選択" /></SelectTrigger>
+                  <SelectTrigger className="w-full text-white"><SelectValue placeholder="選択" /></SelectTrigger>
                   <SelectContent>
                     <SelectItem value="__none__">なし</SelectItem>
                     {interList.map(d => (<SelectItem key={d.id} value={d.id}>{d.name}</SelectItem>))}
@@ -533,7 +533,7 @@ export default function App() {
               <div className="md:col-span-1 sm:col-start-1 sm:row-start-2 md:col-start-3 md:row-start-1">
                 <Label className="text-white">マイクロ A</Label>
                 <Select value={mcAId} onValueChange={(v) => setMcAId(v)}>
-                  <SelectTrigger className="w-full text-black"><SelectValue placeholder="選択" /></SelectTrigger>
+                  <SelectTrigger className="w-full text-white"><SelectValue placeholder="選択" /></SelectTrigger>
                   <SelectContent>
                     <SelectItem value="__none__">なし</SelectItem>
                     {microList.map(d => (<SelectItem key={d.id} value={d.id}>{d.name}</SelectItem>))}
@@ -547,7 +547,7 @@ export default function App() {
               <div className="md:col-span-1 sm:col-start-1 sm:row-start-3 md:col-start-3 md:row-start-2">
                 <Label className="text-white">マイクロ B</Label>
                 <Select value={mcBId} onValueChange={(v) => setMcBId(v)}>
-                  <SelectTrigger className="w-full text-black"><SelectValue placeholder="選択" /></SelectTrigger>
+                  <SelectTrigger className="w-full text-white"><SelectValue placeholder="選択" /></SelectTrigger>
                   <SelectContent>
                     <SelectItem value="__none__">なし</SelectItem>
                     {microList.map(d => (<SelectItem key={d.id} value={d.id}>{d.name}</SelectItem>))}
