@@ -123,18 +123,7 @@ function csvToDevices(text: string): Device[] {
 }
 
 // --- ダミーデータ（後でCSV差替え可） ---
-const SAMPLE_DEVICES: Device[] = [
-  // ガイディング
-  { id: "gc-1", name: "GC A ID 0.088in", maker: "SampleCo", category: "ガイディング", id_mm: inchToMm(0.088), od_mm: frToMm(8), length_cm: 100 },
-  { id: "gc-2", name: "GC B ID 0.091in", maker: "SampleCo", category: "ガイディング", id_mm: inchToMm(0.091), od_mm: frToMm(8.5), length_cm: 90 },
-  // 中間
-  { id: "ic-1", name: "IC A 5.5Fr / ID 0.058in", maker: "SampleCo", category: "中間", id_mm: inchToMm(0.058), od_mm: frToMm(5.5), length_cm: 115 },
-  { id: "ic-2", name: "IC B 6Fr / ID 0.060in", maker: "SampleCo", category: "中間", id_mm: inchToMm(0.06), od_mm: frToMm(6), length_cm: 120 },
-  // マイクロ
-  { id: "mc-1", name: "MC A 0.017in / 2.4Fr", maker: "SampleCo", category: "マイクロ", id_mm: inchToMm(0.017), od_mm: frToMm(2.4), length_cm: 160 },
-  { id: "mc-2", name: "MC B 0.021in / 2.7Fr", maker: "SampleCo", category: "マイクロ", id_mm: inchToMm(0.021), od_mm: frToMm(2.7), length_cm: 156 },
-  { id: "mc-3", name: "MC C 0.0165in / 2.0Fr", maker: "SampleCo", category: "マイクロ", id_mm: inchToMm(0.0165), od_mm: frToMm(2.0), length_cm: 155 },
-];
+const SAMPLE_DEVICES: Device[] = [];
 
 // --- 小さな表示用チップ ---
 const Chip = ({ children, ok }: { children: React.ReactNode; ok?: boolean }) => (
@@ -218,8 +207,8 @@ function LengthVisualizer({ gc, ic, mcA, mcB }: { gc?: Device; ic?: Device; mcA?
   const pxPerCm = containerW / maxLen;
   const x0 = 36; // 左余白
 
-  // Yコネクタ（GC・IC とも 5 cm 仮定）
-  const yGcCm = 5; const yIcCm = 5;
+  // Yコネクタ（GC・IC とも 10 cm 仮定）
+  const yGcCm = 10; const yIcCm = 10;
   const yGcW = yGcCm * pxPerCm; const yIcW = yIcCm * pxPerCm;
 
   // 太さ(px) - 相対関係維持：すべて OD(mm)×定数
@@ -546,7 +535,7 @@ export default function App() {
               <div className="sm:col-start-1 sm:row-start-1 md:col-start-1 md:row-start-1">
                 <Label className="text-white">ガイディング</Label>
                 <Select value={gcId} onValueChange={(v) => setGcId(v)}>
-                  <SelectTrigger className="w-full text-black"><SelectValue placeholder="選択" /></SelectTrigger>
+                  <SelectTrigger className="w-full text-white"><SelectValue placeholder="選択" /></SelectTrigger>
                   <SelectContent>
                     <SelectItem value="__none__">なし</SelectItem>
                     {guidingList.map(d => (<SelectItem key={d.id} value={d.id}>{d.name}</SelectItem>))}
@@ -560,7 +549,7 @@ export default function App() {
               <div className="sm:col-start-2 sm:row-start-1 md:col-start-2 md:row-start-1">
                 <Label className="text-white">中間</Label>
                 <Select value={icId} onValueChange={(v) => setIcId(v)}>
-                  <SelectTrigger className="w-full text-black"><SelectValue placeholder="選択" /></SelectTrigger>
+                  <SelectTrigger className="w-full text-white"><SelectValue placeholder="選択" /></SelectTrigger>
                   <SelectContent>
                     <SelectItem value="__none__">なし</SelectItem>
                     {interList.map(d => (<SelectItem key={d.id} value={d.id}>{d.name}</SelectItem>))}
@@ -574,7 +563,7 @@ export default function App() {
               <div className="md:col-span-1 sm:col-start-1 sm:row-start-2 md:col-start-3 md:row-start-1">
                 <Label className="text-white">マイクロ A</Label>
                 <Select value={mcAId} onValueChange={(v) => setMcAId(v)}>
-                  <SelectTrigger className="w-full text-black"><SelectValue placeholder="選択" /></SelectTrigger>
+                  <SelectTrigger className="w-full text-white"><SelectValue placeholder="選択" /></SelectTrigger>
                   <SelectContent>
                     <SelectItem value="__none__">なし</SelectItem>
                     {microList.map(d => (<SelectItem key={d.id} value={d.id}>{d.name}</SelectItem>))}
@@ -588,7 +577,7 @@ export default function App() {
               <div className="md:col-span-1 sm:col-start-1 sm:row-start-3 md:col-start-3 md:row-start-2">
                 <Label className="text-white">マイクロ B</Label>
                 <Select value={mcBId} onValueChange={(v) => setMcBId(v)}>
-                  <SelectTrigger className="w-full text-black"><SelectValue placeholder="選択" /></SelectTrigger>
+                  <SelectTrigger className="w-full text-white"><SelectValue placeholder="選択" /></SelectTrigger>
                   <SelectContent>
                     <SelectItem value="__none__">なし</SelectItem>
                     {microList.map(d => (<SelectItem key={d.id} value={d.id}>{d.name}</SelectItem>))}
