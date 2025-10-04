@@ -138,7 +138,7 @@ function useCompatibility(
   ic?: Device,
   mcA?: Device,
   mcB?: Device,
-  clearanceMm: number = 0.0
+  clearanceMm: number = 0.025
 ) {
   const result = useMemo(() => {
     const mmOk = (x?: number) => typeof x === "number" && !isNaN(x) && x > 0;
@@ -153,7 +153,7 @@ function useCompatibility(
     let twoInIcOK: boolean | undefined = undefined;
     if (mmOk(ic?.id_mm) && mmOk(mcA?.od_mm) && mmOk(mcB?.od_mm)) {
       const ID = ic!.id_mm!;
-      const need = (mcA!.od_mm! + mcB!.od_mm!) + 2 * clearanceMm; // 固定：加算方式 + 両側クリアランス
+      const need = (mcA!.od_mm! + mcB!.od_mm!) + 1 * clearanceMm; // 固定：加算方式 + 片側クリアランス
       twoInIcOK = need <= ID;
     }
 
