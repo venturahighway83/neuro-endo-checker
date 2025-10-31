@@ -59,7 +59,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${geistSans.className} ${geistMono.variable} antialiased`}>
+      <body className={`${geistSans.className} ${geistMono.className} antialiased`}>
         {children}
       </body>
     </html>
