@@ -1,36 +1,28 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Neuro-Endo Checker（脳血管内治療デバイス適合チェッカー）
 
-## Getting Started
+脳血管内治療に用いるカテーテル／デバイスの“適合性”を可視化・比較するWebアプリです。
+径・長さ・組合せの整合性を直感的に確認でき、TRA/DRAアプローチやFD導入ルート検討を補助します。
 
-First, run the development server:
+Live: https://neuro-endo-checker-jl5j-five.vercel.app
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+技術スタック
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Framework: Next.js (App Router), TypeScript
 
-## Learn More
+Hosting: Vercel (Edge Network)
 
-To learn more about Next.js, take a look at the following resources:
+Styling: Tailwind CSS（など実装に応じて）
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Fonts: next/font (Geist, Geist Mono)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Lint/Format: ESLint, Prettier
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+ライセンス/免責
+
+License: （MIT）
+
+医療免責：本ソフトウェアは研究・教育目的の補助ツールであり、医療機器ではありません。臨床判断は医師の責任において行ってください。製品仕様はメーカー最新情報を確認してください。作者は本ソフトの使用により生じたいかなる損害にも責任を負いません。
