@@ -7,18 +7,6 @@ Live: https://neuro-endo-checker-jl5j-five.vercel.app
 
 
 
-技術スタック
-
-Framework: Next.js (App Router), TypeScript
-
-Hosting: Vercel (Edge Network)
-
-Styling: Tailwind CSS（など実装に応じて）
-
-Fonts: next/font (Geist, Geist Mono)
-
-Lint/Format: ESLint, Prettier
-
 
 
 ライセンス/免責
@@ -26,3 +14,4 @@ Lint/Format: ESLint, Prettier
 License: （MIT）
 
 医療免責：本ソフトウェアは研究・教育目的の補助ツールであり、医療機器ではありません。臨床判断は医師の責任において行ってください。製品仕様はメーカー最新情報を確認してください。作者は本ソフトの使用により生じたいかなる損害にも責任を負いません。
+
