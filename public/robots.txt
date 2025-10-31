@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://neuro-endo-checker-jl5j-five.vercel.app/sitemap.xml
