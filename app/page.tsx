@@ -104,7 +104,9 @@ function csvToDevices(text: string): Device[] {
     const name = (nameI >= 0 ? row[nameI] : "")?.trim();
     if (!name) continue;
     const catRaw = catI >= 0 ? (row[catI] ?? "") : "";
-    const category: Category = catRaw.includes("ガイ") ? "ガイディング" : catRaw.includes("中間") ? "中間" : "マイクロ";
+    const category: Category = (catRaw.includes("ガイ") || catRaw.toLowerCase().includes("guiding")) ? "ガイディング"
+                             : (catRaw.includes("中間") || catRaw.toLowerCase().includes("intermediate")) ? "中間"
+                             : "マイクロ";
     const id_mm = idMmI >= 0 && row[idMmI] ? Number(row[idMmI]) : idInI >= 0 && row[idInI] ? inchToMm(Number(row[idInI])) : undefined;
     const od_mm = odMmI >= 0 && row[odMmI] ? Number(row[odMmI]) : odFrI >= 0 && row[odFrI] ? frToMm(Number(row[odFrI])) : undefined;
     const length_cm = lenI >= 0 && row[lenI] ? Number(row[lenI]) : undefined;
