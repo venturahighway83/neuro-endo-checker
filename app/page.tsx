@@ -85,12 +85,15 @@ function parseCSV(text: string): string[][] {
 
 function csvToDevices(text: string): Device[] {
   const table = parseCSV(text);
+  console.log("CSV rows:", table.length);
   if (table.length < 2) return [];
   const header = table[0].map(h => h.trim().toLowerCase());
+  console.log("CSV header:", header);
   const idx = (names: string[]) => header.findIndex(h => names.includes(h));
 
   const nameI = idx(["name", "名称", "製品名"]);
   const catI  = idx(["category", "カテゴリ"]);
+  console.log("nameI:", nameI, "catI:", catI);
   const makerI= idx(["maker", "メーカー"]);
   const idMmI = idx(["id_mm", "内径_mm"]);
   const odMmI = idx(["od_mm", "外径_mm"]);
